@@ -54,11 +54,13 @@ namespace IntroExercises
 
                 return -1;
 
+            //comprueba que no haya problemas con el array.
+
             if (startIndex > array.Length || endIndex > array.Length || startIndex < 0 || endIndex < 0 || startIndex > endIndex)
 
                 return -1;
 
-            for (int i = 0; i <= endIndex; i++)
+            for (int i = startIndex; i <= endIndex; i++)
             {
                 if (array[i] == value)
                 {
@@ -75,11 +77,25 @@ namespace IntroExercises
 
         public static int Count(int[] array, int value, int startIndex, int endIndex)
         {
+            int counter = 0;
             if (array == null || array.Length == 0)
+
+                return counter;
+
+            //comprueba que no haya problemas con el array.
+            if (startIndex > array.Length || endIndex > array.Length || startIndex < 0 || endIndex < 0 || startIndex > endIndex)
+
+                return counter;
+            for (int i = startIndex; i < endIndex; i++)
             {
-                return 0;
+                if (array[i] == value)
+                {
+                    counter++;
+                }
             }
-            return 0;
+            
+            return counter;
+
         }
 
         //TODO #5
