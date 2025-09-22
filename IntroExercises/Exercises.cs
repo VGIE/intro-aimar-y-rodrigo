@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +23,7 @@ namespace IntroExercises
             }
             // si llega aquí es que no lo encontró.
             return -1;
-        
+
         }
 
         //TODO #2
@@ -43,7 +44,7 @@ namespace IntroExercises
 
             }
             return contador;
-                
+
         }
 
         //TODO #3
@@ -94,7 +95,7 @@ namespace IntroExercises
                     counter++;
                 }
             }
-            
+
             return counter;
 
         }
@@ -109,7 +110,37 @@ namespace IntroExercises
         //  AreEqual(null, null) => false
         public static bool AreEqual(int[] A, int[] B)
         {
-            return true;
+            if (A == null || B == null)
+            {
+                return false;
+            }
+            if (A.Length != B.Length)
+            {
+                return false;
+            }
+            int sumaA = 0, sumaB = 0;
+
+            // si llega aqui, no son ni nulls ni tienen diferente tamaño
+
+            //suma para A y B
+            for (int i = 0; i < A.Length; i++)
+            {
+                sumaA += A[i];
+                sumaB += B[i];
+            }
+            if (sumaA == sumaB)
+            {
+                return true;
+            }
+            return false; 
+            
+            }
+            
         }
+        
+        
+       
+        
     }
-}
+
+
