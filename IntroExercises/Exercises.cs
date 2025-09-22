@@ -14,12 +14,13 @@ namespace IntroExercises
         public static int Find(int[] array, int value)
         {
             if (array == null || array.Length == 0)
-                return -1;
-
-            for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] == value)
+                return -1;
+            }
+            for (int i = 0; i < array.Length; i++) {
+                if (array[i] == value) {
                     return i;
+                }
             }
             // si llega aquí es que no lo encontró.
             return -1;
